@@ -1,0 +1,11 @@
+image: continuumio/miniconda3:latest
+
+before_script:
+  - conda env create -f environment.yml -p ${HOME}/miniconda
+  - source activate ${HOME}/miniconda
+  - conda info -a
+  - python setup.py build_ext --inplace
+  - make mumps
+
+job1:
+  script: nosetests --with-cov --cov pymatsolver --cov-config .coveragerc -v -s

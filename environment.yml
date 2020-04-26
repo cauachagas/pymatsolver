@@ -1,0 +1,27 @@
+channels:
+  - defaults
+  - conda-forge
+
+dependencies:
+  #- python>=3.6
+  - pymkl
+  - numpy
+  - scipy
+  - cython
+  - mumps-seq
+  - python-coveralls
+  - nose
+  - nose-cov
+  - compilers
+  - openmpi
+  #- openmpi-mpicc
+  #- openmpi-mpicxx
+  #- openmpi-mpifort
+  #- mpich-mpicc
+  #- mpich-mpicxx
+  #- mpich-mpifort
+  - make
+  - curl
+  - pip
+  - pip:
+    - "https://github.com/simpeg/discretize/archive/master.zip"

@@ -1,5 +1,5 @@
-INCMUMPS  = -I/usr/include -L/usr/lib \
-            -L/usr/local/opt/libevent/lib
+INCMUMPS  = -I${HOME}/miniconda/include -L${HOME}/miniconda/lib \
+            
 INCMAC    = -L/usr/local/opt/scotch5/lib \
             -L/usr/local/Cellar/open-mpi/2.0.1/lib \
             -L/usr/local/opt/libevent/lib \
@@ -11,8 +11,11 @@ INCMAC    = -L/usr/local/opt/scotch5/lib \
 # brew install mumps --with-scotch5 --without-mpi
 # Helpful: mpicc --showme
 
-LIB = -lmpi -lblas -lpord -lcmumps
-LIBSEQ = -lmpiseq_seq -lzmumps_seq -ldmumps_seq -lsmumps_seq -lmumps_common_seq
+#LIB = -lmpi -lblas -lpord -lcmumps
+#LIBSEQ = -lmpiseq_seq -lzmumps_seq -ldmumps_seq -lsmumps_seq -lmumps_common_seq
+
+LIB = -lmpi -lmkl_rt
+LIBSEQ = -lpord_seq -lcmumps_seq -lmpiseq_seq -lzmumps_seq -ldmumps_seq -lsmumps_seq -lmumps_common_seq
 LIBPAR = -lmpiseq -lzmumps -ldmumps -lsmumps -lmumps_common
 LIBSCOTCH = -lesmumps -lptscotch -lptscotcherrexit -lscotch -lscotcherrexit -lptesmumps -lptscotcherr -lptscotchparmetis -lscotcherr -lscotchmetis
 
