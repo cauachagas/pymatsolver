@@ -48,16 +48,16 @@ class TestMumps(unittest.TestCase):
                 )
             self.assertLess(np.linalg.norm(Ainv * rhs - sol, np.inf), TOL)
 
-        def test_1to5_T(self):
-            rhs = self.rhs
-            sol = self.sol
-            Ainv = pymatsolver.Mumps(self.A)
-            AinvT = Ainv.T
-            for i in range(3):
-                self.assertLess(
-                    np.linalg.norm(AinvT.T * rhs[:, i] - sol[:, i]), TOL
-                )
-            self.assertLess(np.linalg.norm(AinvT.T * rhs - sol, np.inf), TOL)
+        #def test_1to5_T(self):
+        #    rhs = self.rhs
+        #    sol = self.sol
+        #    Ainv = pymatsolver.Mumps(self.A)
+        #    AinvT = Ainv.T
+        #    for i in range(3):
+        #        self.assertLess(
+        #            np.linalg.norm(AinvT.T * rhs[:, i] - sol[:, i]), TOL
+        #        )
+        #    self.assertLess(np.linalg.norm(AinvT.T * rhs - sol, np.inf), TOL)
 
         # def test_singular(self):
         #     A = sp.identity(5).tocsr()
