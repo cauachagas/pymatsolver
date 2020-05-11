@@ -9,7 +9,7 @@ from pyMKL import pardisoSolver as _pardisoSolver
 from pyMKL import mkl_set_num_threads, mkl_get_max_threads
 
 import os
-_omp_threads = os.environ.get('OMP_NUM_THREADS')
+_omp_threads = int(os.environ.get('OMP_NUM_THREADS'))
 if _omp_threads is not None:
     _max_threads = _omp_threads
 else:
